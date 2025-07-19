@@ -6,6 +6,10 @@ This project provides a template for setting up a powerful, AI-enhanced developm
 
 To get started, follow the detailed instructions in the [SETUP_PLAN.md](SETUP_PLAN.md) file. This will guide you through the process of setting up your local environment, including the installation of VSCode, the Dev Containers extension, and all the necessary tools and configurations.
 
+## Coding Guidelines
+
+We maintain a set of [coding guidelines](docs/CODING_GUIDELINES.md) to ensure code quality and consistency. All contributors are expected to read and follow these guidelines.
+
 ## Directory Structure
 
 ```
