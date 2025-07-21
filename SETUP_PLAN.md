@@ -80,3 +80,25 @@ To share this setup with your team, commit the VSCode configuration.
     - Create a `.vscode/extensions.json` file to recommend all the extensions listed here.
     - Create a `.vscode/settings.json` to define workspace-specific settings like format-on-save.
     - When a new developer opens the project, VSCode will prompt them to install the recommended extensions.
+
+## Phase 5: Infrastructure as Code & CI/CD Automation
+
+### 1. Environment Preparation
+- **Action:**
+    - Update `.devcontainer/devcontainer.json` to install the `terraform` and `gcloud-cli`.
+    - Update `docs/CODING_GUIDELINES.md` with a new section for Terraform standards.
+    - Update `SETUP_PLAN.md` to include the official plan for Phase 5.
+
+### 2. Terraform Foundation (IaC)
+- **Action:**
+    - Create the `terraform/` directory with `main.tf`, `variables.tf`, `providers.tf`, and a `.gitignore` file.
+
+### 3. GitHub Actions for CI/CD (Automation)
+- **Action:**
+    - Create the `.github/workflows/` directory.
+    - Create the `ci.yml` workflow for validation.
+    - Create the `cd.yml` workflow for deployment.
+
+### 4. Documentation
+- **Action:**
+    - Update the main `README.md` with a new "Infrastructure & Deployment" section.

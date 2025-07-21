@@ -14,7 +14,7 @@
       ]
     }
   },
-  "postCreateCommand": "pip install --user -r requirements.txt && sudo apt-get update && sudo apt-get install -y gh && npm install -g @anthropic-ai/claude-code && pip install uv",
+  pip install --user -r requirements.txt && sudo apt-get update && sudo apt-get install -y gnupg software-properties-common && wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null && echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list && curl -sSL https://sdk.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && echo "deb https://sdk.cloud.google.com/apt/ cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && sudo apt-get update && sudo apt-get install -y gh terraform google-cloud-cli && npm install -g @anthropic-ai/claude-code && pip install uv,
   "forwardPorts": [8000],
   "remoteUser": "vscode"
 }
