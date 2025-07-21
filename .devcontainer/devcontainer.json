@@ -14,7 +14,7 @@
       ]
     }
   },
-  "postCreateCommand": "pip install --user -r requirements.txt",
+  "postCreateCommand": "pip install --user -r requirements.txt && sudo apt-get update && sudo apt-get install -y gh && npm install -g @anthropic-ai/claude-code && pip install uv",
   "forwardPorts": [8000],
   "remoteUser": "vscode"
 }

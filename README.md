@@ -1,60 +1,122 @@
 # AI-Powered Development Environment
 
-This project provides a template for setting up a powerful, AI-enhanced development environment using Visual Studio Code. It is designed to be a flexible and reproducible foundation for modern software development, integrating cutting-edge AI tools to streamline your workflow.
+This repository contains the blueprint for a standardized, AI-enhanced development environment. Its purpose is to provide a seamless, efficient, and consistent coding experience for every developer on the team, from the moment they join the project.
 
-## Getting Started
+## The Story: Supercharge Your Workflow
 
-To get started, follow the detailed instructions in the [SETUP_PLAN.md](SETUP_PLAN.md) file. This will guide you through the process of setting up your local environment, including the installation of VSCode, the Dev Containers extension, and all the necessary tools and configurations.
+In modern software development, consistency and efficiency are paramount. Setting up a new development machine can be a time-consuming and error-prone process, leading to the classic "it works on my machine" problem. Furthermore, the rise of powerful AI tools presents a new opportunity: to build an environment where AI is not just an add-on, but a core component of the workflow.
 
-## Coding Guidelines
+This project was created to solve these challenges. Our goal is to provide a "one-click" setup that launches a pre-configured, containerized development environment where every necessary tool, extension, and AI assistant is already installed and optimized. 
 
-We maintain a set of [coding guidelines](docs/CODING_GUIDELINES.md) to ensure code quality and consistency. All contributors are expected to read and follow these guidelines.
+**The benefits for our team are clear:**
 
-## Directory Structure
+- **Zero Configuration Onboarding:** A new developer can clone this repository, open it in VS Code, and have a fully functional, production-ready environment running in minutes, not days.
+- **Guaranteed Consistency:** The Dev Container ensures every team member uses the exact same dependencies, tools, and configurations, eliminating environment-related bugs.
+- **AI at Your Fingertips:** We have integrated powerful AI assistants (Gemini and Claude) and advanced tools like Serena directly into the command line, ready to help with code generation, debugging, and complex problem-solving.
+- **Automated Quality Control:** With built-in formatters and linters that run on every save, we maintain a high standard of code quality automatically, letting developers focus on logic instead of style.
+
+This is more than just a collection of tools; it's a commitment to a better, faster, and smarter way of building software.
+
+## Software & Packages
+
+### Prerequisites (Install on your local machine)
+
+- **Visual Studio Code:** The core IDE.
+- **Docker Desktop:** To build and run the Dev Container.
+- **VS Code Dev Containers Extension:** The extension that enables VS Code to connect to the containerized environment.
+
+### Included in the Dev Container (Installed automatically)
+
+This environment comes with the following tools and packages pre-installed and configured:
+
+- **Languages & Runtimes:**
+  - Python 3.10
+  - Node.js
+- **CLI Tools:**
+  - **Google Gemini CLI (`gemini-cli`):** For interacting with Google's Gemini models.
+  - **Anthropic Claude CLI (`claude-code`):** For interacting with Anthropic's Claude models.
+  - **GitHub CLI (`gh`):** For managing GitHub repositories and workflows.
+  - **UV (`uv`):** An extremely fast Python installer, used for running Serena.
+- **VS Code Extensions (Server-side):**
+  - `donjayamanne.python-extension-pack`: Comprehensive Python support.
+  - `Vue.volar`: Official Vue.js support.
+  - `GitHub.copilot`: Real-time AI code completion.
+  - `esbenp.prettier-vscode`: Automated code formatting.
+  - `dbaeumer.vscode-eslint`: Code linting and analysis.
+  - `GitHub.vscode-pull-request-github`: Manage PRs and issues inside VS Code.
+
+## Project File Structure
 
 ```
 .devcontainer/
-├── devcontainer.json
+├── devcontainer.json       # Defines the dev environment, tools, and extensions
 .vscode/
-├── extensions.json
-├── settings.json
+├── extensions.json         # Recommends VS Code extensions to the user
+└── settings.json           # Workspace settings (e.g., format on save)
+docs/
+├── CODING_GUIDELINES.md    # Best practices for writing code in this project
+└── ...                     # Other documentation
 prompts/
-├── system.md
-├── project.md
-├── custom.md
-.gitignore
-AIIDEClient.md
-README.md
-SETUP_PLAN.md
-requirements.txt
+├── system.md               # High-level instructions for the AI
+├── project.md              # Project-specific context for the AI
+└── custom.md               # User-defined, custom prompts
+.eslintrc.js                # Configuration for the ESLint linter
+.gitignore                  # Specifies files for Git to ignore
+.prettierrc                 # Rules for the Prettier code formatter
+AIIDEClient.md              # Original feature requirements document
+README.md                   # This file: the project's main entry point
+SETUP_PLAN.md               # The step-by-step plan used to build this environment
+requirements.txt            # Python package dependencies (e.g., for Gemini CLI)
 ```
 
-## VSCode Extensions
+## Step-by-Step Installation Guide
 
-The `.devcontainer/devcontainer.json` file includes the following VSCode extensions:
+For a fully automated setup, use the provided installation script. It will check for prerequisites and launch the environment for you.
 
-- `ms-vscode-remote.remote-containers`: The core extension for Dev Containers.
-- `donjayamanne.python-extension-pack`: A collection of popular extensions for Python development.
-- `Vue.volar`: The official extension for Vue.js development.
-- `GitHub.copilot`: The AI-powered code completion tool.
-- `esbenp.prettier-vscode`: The Prettier code formatter.
-- `dbaeumer.vscode-eslint`: The ESLint linter.
-- `GitHub.vscode-pull-request-github`: An extension for managing GitHub pull requests and issues.
+1.  **Clone the Repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd <your-repository-name>
+    ```
 
-## Features
+2.  **Run the Installer:**
+    ```bash
+    ./install.sh
+    ```
+    The script will verify your setup and open the project in VS Code.
 
-This AI IDE setup is designed to provide a comprehensive set of features, including:
+3.  **Reopen in Container:** A pop-up will appear in the bottom-right corner of VS Code asking you to "Reopen in Container". Click it.
+    - VS Code will now build the Docker container. This may take several minutes on the first run.
 
-### Core Development Environment
-- **Polyglot Support:** Out-of-the-box support for Python, TypeScript, Vue.js, FastAPI, and Nuxt.js.
-- **Reproducible Environments:** Leverages Dev Containers to ensure a consistent development environment for all team members, whether working locally or in the cloud.
-- **Code Quality:** Integrated support for code formatting with Prettier and linting with ESLint to maintain a clean and consistent codebase.
+4.  **Done!** Once the container is built, you will be inside the fully configured development environment. You can now proceed to the verification checklist.
 
-### AI-Assisted Development
-- **Code Completion & Generation:** Utilizes GitHub Copilot for intelligent code completion, function generation, and boilerplate reduction.
-- **CLI-Based LLM Integration:** Seamlessly integrates powerful command-line LLMs like Gemini-CLI and Claude-Code directly into the VSCode terminal.
-- **Prompt Engineering:** A structured approach to managing and utilizing prompts for various development tasks.
+## Verification Checklist & Testing Procedure
 
-### Advanced Features
-- **Spec-Driven Development:** Supports integration with tools like AWS Kiro and Jira MCP for a design-first development approach.
-- **End-to-End Workflow:** From project planning and management to Git integration and CI/CD, this setup aims to provide a holistic development experience.
+To ensure everything is installed correctly, open a new terminal inside VS Code (`Terminal > New Terminal`) and run the following commands. Each command should return a version number or help text without errors.
+
+- **Check Python:**
+  ```bash
+  python --version
+  ```
+- **Check Node.js:**
+  ```bash
+  node --version
+  ```
+- **Check GitHub CLI:**
+  ```bash
+  gh --version
+  ```
+- **Check Gemini CLI:**
+  ```bash
+  gemini-cli --version
+  ```
+- **Check Claude CLI:**
+  ```bash
+  claude-code --version
+  ```
+- **Check UV Installer:**
+  ```bash
+  uv --version
+  ```
+
+If all commands execute successfully, your AI-powered development environment is ready to use.

@@ -14,3 +14,10 @@
     - Tools for git, CI/CD solution like GitHub-cli
     - Tools for process management like claude code hooks or SDK with automation.
     - Tools for Spec-driven development, context engineering, flow state support like Jira MCP
+- Devel(Including testing), staging and production environment setting
+    - IaC with Terraform
+    - GitHub Actions for CI/CD and quality control with hooks
+    - GitOps 
+    - Developing and Testing environment setting
+    - Staging environment setting
+    - Production environment setting
