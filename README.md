@@ -163,16 +163,14 @@ The Terraform code is located in the `terraform/` directory. It is configured to
 
 - **Usage:** You can run standard Terraform commands from the `terraform/` directory:
   - `terraform init`: Initialize the backend.
-  - `terraform plan -var="environment=dev"`: See the changes for the dev environment.
-  - `terraform apply -var="environment=dev"`: Apply the changes for the dev environment.
+  - `terraform plan -var="project_id=your-gcp-project-id"`: See the changes.
+  - `terraform apply -var="project_id=your-gcp-project-id"`: Apply the changes.
 
 ### CI/CD
 
 We have two GitHub Actions workflows defined in the `.github/workflows/` directory:
 
-- **`ci.yml`:** This workflow runs automatically on every push to the `main` branch. It validates the Terraform code to ensure it is well-formed and syntactically correct.
-- **`cd.yml`:** This is a manual workflow for deploying the infrastructure. To run it:
-  1.  Go to the "Actions" tab in your GitHub repository.
-  2.  Select the "Terraform CD" workflow.
-  3.  Click "Run workflow".
-  4.  Choose the environment (dev, staging, or prod) you want to deploy to.
+- **`ci.yml`:** This workflow runs automatically on every push and pull request to the `main` branch. It performs the following checks:
+    - Lints the code using ESLint.
+    - Checks for formatting issues with Prettier.
+- **`cd.yml`:** This workflow is for deploying the infrastructure. It is currently a placeholder and can be expanded to deploy to different environments.
