@@ -1,0 +1,13 @@
+# Session Log: 2025-07-21
+
+## Interaction 1
+
+**User Request:**
+> yes, please
+
+*(Context: User approved the plan to update the README.md with the new "Infrastructure & Deployment" section.)*
+
+**Gemini Response:**
+*   Read the current `README.md` to get its content.
+*   Appended the new "Infrastructure & Deployment" section to the `README.md` file, documenting the Terraform and GitHub Actions workflows.
+*   Confirmed completion of all tasks for Phase 5.

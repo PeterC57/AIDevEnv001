@@ -146,3 +146,33 @@ To ensure everything is installed correctly, open a new terminal inside VS Code 
   ```
 
 If all commands execute successfully, your AI-powered development environment is ready to use.
+
+## Infrastructure & Deployment
+
+This project uses Terraform to manage infrastructure as code and GitHub Actions for CI/CD.
+
+### Infrastructure
+
+The Terraform code is located in the `terraform/` directory. It is configured to use the Google Cloud Platform (GCP) provider.
+
+- **Authentication:** Before you can run Terraform commands, you must authenticate with GCP. The recommended method is to use Application Default Credentials (ADC). You can do this by running the following command from within the dev container:
+  ```bash
+  gcloud auth application-default login
+  ```
+  This will guide you through the process of authenticating with your GCP account.
+
+- **Usage:** You can run standard Terraform commands from the `terraform/` directory:
+  - `terraform init`: Initialize the backend.
+  - `terraform plan -var="environment=dev"`: See the changes for the dev environment.
+  - `terraform apply -var="environment=dev"`: Apply the changes for the dev environment.
+
+### CI/CD
+
+We have two GitHub Actions workflows defined in the `.github/workflows/` directory:
+
+- **`ci.yml`:** This workflow runs automatically on every push to the `main` branch. It validates the Terraform code to ensure it is well-formed and syntactically correct.
+- **`cd.yml`:** This is a manual workflow for deploying the infrastructure. To run it:
+  1.  Go to the "Actions" tab in your GitHub repository.
+  2.  Select the "Terraform CD" workflow.
+  3.  Click "Run workflow".
+  4.  Choose the environment (dev, staging, or prod) you want to deploy to.
