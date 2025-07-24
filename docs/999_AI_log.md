@@ -19,18 +19,7 @@ Day 1
 ---
 Input
 ---
-> @AIIDEClient.md please prepare a set up plan (with VSCode) with this assumption  
----
-Doing
----
- │ ✔  ReadManyFiles Will attempt to read and concatenate files using patterns: `AIIDEClient…  │
- │                                                                                            │
- │    ### ReadManyFiles Result (Target Dir: `/Users/kjchen/github/AIDevEnv001`)               │
- │                                                                                            │
- │    Successfully read and concatenated content from **1 file(s)**.                          │
- │                                                                                            │
- │    **Processed Files:**                                                                    │
- │    - `AIIDEClient.md`                                                                      │
+> @AIIDEClient.md please prepare a set up plan (with VSCode) with this assumption                                                              
 ---
 Output
 ---
